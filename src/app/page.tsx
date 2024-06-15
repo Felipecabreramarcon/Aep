@@ -54,6 +54,10 @@ export default function Home() {
     { text: "Entrar com Instagram", img: "/icons8-instagram 1.png" },
   ];
 
+  interface ids {
+    id: "nome" | "sobrenome" | "email" | "telefone" | "estado" | "genero";
+  }
+
   const zodSchema = z.object({
     nome: z.string().min(1, "Preencha Corretamente"),
     sobrenome: z.string().min(1, "Preencha Corretamente"),
@@ -75,6 +79,7 @@ export default function Home() {
   } = useForm<z.infer<typeof zodSchema>>({
     resolver: zodResolver(zodSchema),
   });
+
   console.log(watch());
   return (
     <div className="w-screen overflow-x-hidden gap-44 flex flex-col h-auto">
@@ -181,77 +186,83 @@ export default function Home() {
                     className="w-full h-auto grid px-4 gap-y-10 gap-4 pt-10 grid-cols-2"
                   >
                     {inputsHeaders.map((input, index) => {
-                      if (input.id === "telefone")
-                        return (
-                          <div className="relative">
-                            <input
-                              {...register(input.id as any)}
-                              key={index}
-                              className="h-12 w-full border-2 font-normal text-base  rounded-lg pl-4"
-                              type={input.type}
-                              onChange={(e) =>
-                                setValue(
-                                  "telefone",
-                                  formatPhoneText(e.target.value)
-                                )
-                              }
-                              placeholder={input.placeholder}
-                              id={input.id}
-                            />
-                            {errors?.[input.id] && (
-                              <span className="absolute text-sm font-normal  right-0 bottom-[-20px] text-red-600">
-                                {errors?.[input.id].message}
-                              </span>
-                            )}
-                          </div>
-                        );
-                      if (input.options) {
-                        return (
-                          <div className="relative h-12 w-full">
-                            <select
-                              key={index}
-                              {...register(input.id as any)}
-                              className={`h-full w-full  font-normal pr-2  text-base border-2 rounded-lg pl-4`}
-                              name={input.id}
-                              id={input.id}
-                            >
-                              <option className="" value="">
-                                {input.placeholder}
-                              </option>
-                              {input.options.map((option) => {
-                                return (
-                                  <option key={option} value={option}>
-                                    {option}
-                                  </option>
-                                );
-                              })}
-                            </select>
-                            {errors?.[input.id] && (
-                              <span className="absolute text-sm font-normal  right-0 bottom-[-20px] text-red-600">
-                                {errors?.[input.id].message}
-                              </span>
-                            )}
-                          </div>
-                        );
-                      }
-                      if (!input.options) {
-                        return (
-                          <div className="relative">
-                            <input
-                              {...register(input.id as any)}
-                              key={index}
-                              className="h-12 w-full border-2 font-normal text-base  rounded-lg pl-4"
-                              type={input.type}
-                              placeholder={input.placeholder}
-                              id={input.id}
-                            />
-                            {errors?.[input.id] && (
-                              <span className="absolute text-sm font-normal  right-0 bottom-[-20px] text-red-600">
-                                {errors?.[input.id].message}
-                              </span>
-                            )}
-                          </div>
-                        );
+                      if (
+                        input.id === "telefone" ||
+                        input.id === "email" ||
+                        input.id === "nome" ||
+                        input.id === "sobrenome" ||
+                        input.id === "estado" ||
+                        input.id === "genero"
+                      ) {
+                        if (input.id === "telefone")
+                          return (
+                            <div key={index} className="relative">
+                              <input
+                                {...register(input.id as any)}
+                                className="h-12 w-full border-2 font-normal text-base  rounded-lg pl-4"
+                                type={input.type}
+                                onChange={(e) =>
+                                  setValue(
+                                    "telefone",
+                                    formatPhoneText(e.target.value)
+                                  )
+                                }
+                                placeholder={input.placeholder}
+                                id={input.id}
+                              />
+                              {errors?.[input.id] && (
+                                <span className="absolute text-sm font-normal  right-0 bottom-[-20px] text-red-600">
+                                  {errors?.[input?.id]?.message}
+                                </span>
+                              )}
+                            </div>
+                          );
+                        if (input.options) {
+                          return (
+                            <div key={index} className="relative h-12 w-full">
+                              <select
+                                {...register(input.id as any)}
+                                className={`h-full w-full  font-normal pr-2  text-base border-2 rounded-lg pl-4`}
+                                name={input.id}
+                                id={input.id}
+                              >
+                                <option className="" value="">
+                                  {input.placeholder}
+                                </option>
+                                {input.options.map((option) => {
+                                  return (
+                                    <option key={option} value={option}>
+                                      {option}
+                                    </option>
+                                  );
+                                })}
+                              </select>
+                              {errors?.[input?.id] && (
+                                <span className="absolute text-sm font-normal  right-0 bottom-[-20px] text-red-600">
+                                  {errors?.[input?.id]?.message}
+                                </span>
+                              )}
+                            </div>
+                          );
+                        }
+                        if (!input.options) {
+                          return (
+                            <div key={index} className="relative">
+                              <input
+                                {...register(input.id as any)}
+                                className="h-12 w-full border-2 font-normal text-base  rounded-lg pl-4"
+                                type={input.type}
+                                placeholder={input.placeholder}
+                                id={input.id}
+                              />
+                              {errors?.[input?.id] && errors && (
+                                <span className="absolute text-sm font-normal  right-0 bottom-[-20px] text-red-600">
+                                  {errors?.[input.id]?.message}
+                                </span>
+                              )}
+                            </div>
+                          );
+                        }
                       }
                     })}
                     <div className="col-span-full flex gap-2 px-1 items-center h-4 ">
@@ -263,11 +274,11 @@ export default function Home() {
                     {buttonHeaders.map((button, index) => {
                       return (
                         <button
+                          key={index}
                           onClick={(e) => {
                             e.stopPropagation();
                             e.preventDefault();
                           }}
-                          key={index}
                           className="h-12 w-full hover:bg-gray-100 border-2 flex font-normal items-center px-6 gap-3 rounded-lg"
                         >
                           <img src={button.img} alt="" />
