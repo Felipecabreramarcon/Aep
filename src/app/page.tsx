@@ -2,112 +2,74 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <div className="w-screen gap-44 flex flex-col h-auto">
+      <img
+        className=" w-full -z-10 absolute "
+        src="/6eccb606-d6a0-4f81-b735-2a4fc7b2c2f7.jpg"
+      />
+      <div className="w-[40%] ml-64 flex items-center h-[60vh]">
+        {" "}
+        <span className="text-7xl leading-tight font-semibold text-white ">
+          A terra pode ser salva?
+        </span>
+      </div>
+
+      <div className="fixed h-28 top-0  flex items-center justify-center w-full">
+        <div className="h-full text-white text-2xl font-semibold gap-28 relative rounded-b-3xl justify-center items-center w-[60%] bg-[#0000009d] flex">
+          <img
+            className="w-20 ml-5 left-0 absolute h-20"
+            src="https://s3-alpha-sig.figma.com/img/6a3e/1c62/a38883aa42fef6e43d3aa4ff620e268e?Expires=1719187200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=kZ4bjnLCcaZQXoG-vEMxTigR0wYyfyZiY9Ic35NoTFuxtmNdiBeSmu2ZFWfj1uVoXKETneRmab1qpfi0BBcl97ODiO5WQpZcg092WnEbKFudPnoZs7k74H6FQM4VWMa3lPcwHp4xfcdQc29zxdDHX4jNdKWFeZwnNTBw8Dno-33i3kQnaEYmjFaS7lI5Ds57lEhhL4zUba~FC9Rh7AIEkb7zNcrctUGUjxXXqGUIWZlg~XuT0OOA4nP0JjU1N-TJjz3-rF2Q6Ubm-Wn9FYZhAIORfi1cm6V7g5o7NWkSwnGLrjbC5fdD61J9V4~2bWIYZu697DvAwMWWFNKKZFqESQ__"
+            alt=""
+          />
+          <span>ESG</span>
+          <span>Sobre nós</span>
+          <span>Checklist</span>
         </div>
       </div>
-
-      <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
+      <div className="h-auto gap-20 px-64 font-semibold text-xl py-44 w-full bg-white flex flex-col">
+        <span>
+          O aquecimento global, causado principalmente pela emissão de gases de
+          efeito estufa provenientes de atividades humanas, representa uma
+          ameaça significativa ao nosso planeta. O aumento das temperaturas
+          médias tem efeitos devastadores, como o derretimento das calotas
+          polares, elevação do nível do mar e aumento na frequência de eventos
+          climáticos extremos, como furacões e secas. Além disso, a
+          biodiversidade está em risco, com muitas espécies incapazes de se
+          adaptar rapidamente às mudanças climáticas, o que afeta diretamente a
+          agricultura e a segurança alimentar global. A saúde humana também
+          sofre, com o aumento de doenças relacionadas à poluição e ao calor
+          extremo.
+        </span>
+        <span>
+          Educar a população sobre os impactos do aquecimento global e promover
+          um estilo de vida sustentável são igualmente importantes. Campanhas de
+          conscientização e a inclusão do tema nos currículos escolares podem
+          mobilizar mais pessoas. Além disso, a implementação de políticas
+          eficazes e a cooperação internacional são cruciais para cumprir
+          acordos climáticos, como o Acordo de Paris.
+        </span>
+        <span className="mb-14">
+          A luta contra o aquecimento global exige um esforço conjunto e
+          compromisso de todos. Com ação imediata e coordenada, podemos reverter
+          essa trajetória e garantir um futuro mais sustentável e saudável para
+          as próximas gerações. O futuro do nosso planeta depende das decisões
+          que tomamos hoje.
+        </span>
+        <div className="flex flex-col gap-20 justify-center items-center">
+          {" "}
+          <h1 className="text-3xl font-bold">Quantos Países Participam?</h1>
+          <div className="bg-gradient-to-r pb-0.5 from-[#F2F2F2] via-[#C4C4C4] to-[#F2F2F2]">
+            <img src="/chart.png" className="bg-white pb-10" alt="" />
+          </div>
+        </div>
+        <div className="flex flex-col gap-20 justify-center items-center">
+          {" "}
+          <h1 className="text-3xl font-bold">Quantos Países Participam?</h1>
+          <div className="bg-gradient-to-r pb-0.5 from-[#F2F2F2] via-[#C4C4C4] to-[#F2F2F2]">
+            <img src="/Group 47 (1).png" className="bg-white pb-10" alt="" />
+          </div>
+        </div>
       </div>
-
-      <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+    </div>
   );
 }
